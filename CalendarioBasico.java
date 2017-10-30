@@ -23,7 +23,7 @@ public class CalendarioBasico
     {
         day = 01;
         month = 01;
-        year = 01;
+        year = 2001;
     }
     
     /**
@@ -51,29 +51,61 @@ public class CalendarioBasico
         month = meses;
         year = anyos;
         if (dias > 30) {
-            dias = 0;
-            meses = 0;
-            anyos = 0;
+            day = 0;
+            month = 0;
+            year = 0;
+            System.out.println("Error. Introduzca un valor entre 01 y 30");
+        }
+        if (dias <= 0) {
+            day = 0;
+            month = 0;
+            year = 0;
             System.out.println("Error. Introduzca un valor entre 01 y 30");
         }
         if (meses > 12) {
-            dias = 0;
-            meses = 0;
-            anyos = 0;
+            day = 0;
+            month = 0;
+            year = 0;
             System.out.println("Error. Introduzca un valor entre 01 y 12");
         }
-        if (anyos > 99) {
-            dias = 0;
-            meses = 0;
-            anyos = 0;
+        if (meses <= 0) {
+            day = 0;
+            month = 0;
+            year = 0;
+            System.out.println("Error. Introduzca un valor entre 01 y 12");
+        }
+        if (anyos > 2099) {
+            day = 0;
+            month = 0;
+            year = 0;
+            System.out.println("Error. Introduzca un valor entre 01 y 99");
+        }
+        if (anyos <= 0) {
+            day = 0;
+            month = 0;
+            year = 0;
             System.out.println("Error. Introduzca un valor entre 01 y 99");
         }
     }
 
     /**
      * Devuelve en forma de tipo String la fecha en la que nos encontramos 
-     * según un calendario.
+     * según un calendario. El formato es el siguiente: dd/mm/aa.
      */
+    public String obtenerFecha()
+    {
+        String dosNumDay = String.valueOf(day);
+        String dosNumMonth = String.valueOf(month);
+        String dosNumYear = String.valueOf(year);
+        if (dosNumDay.length() < 2) {
+            dosNumDay = "0" + String.valueOf(day);
+        }
+        if (dosNumMonth.length() < 2) {
+            dosNumMonth = "0" + String.valueOf(month);
+        }
+        return dosNumDay + "-" + dosNumMonth + "-" + dosNumYear.substring(2,4);
+        
+    }
 
 
 }
