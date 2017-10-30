@@ -17,23 +17,27 @@ public class CalendarioBasico
     private int year;
 
     /**
-     * Constructor for objects of class CalendarioBasico
+     * El constructor del calendario, creará la fecha por defecto 01-01-01
      */
     public CalendarioBasico()
     {
-        // initialise instance variables
-        x = 0;
+        day = 01;
+        month = 01;
+        year = 01;
+    }
+    
+    /**
+     * Permite avanzar la fecha del calendario en un día.
+     */
+    public void avanzarFecha()
+    {
+        day += 1;
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Devuelve en forma de tipo String la fecha en la que nos encontramos 
+     * según un calendario.
      */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+
+
 }
