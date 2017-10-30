@@ -32,6 +32,42 @@ public class CalendarioBasico
     public void avanzarFecha()
     {
         day += 1;
+        if (day > 30) {
+            month += 1;
+            day = 01;
+        }
+        if (month > 12) {
+            year += 1;
+            month = 01;
+        }
+    }
+    
+    /**
+     * Permite establecer la fecha del calendario alterando la preestablecida.
+     */
+    public void fijarFecha(int dias, int meses, int anyos)
+    {
+        day = dias;
+        month = meses;
+        year = anyos;
+        if (dias > 30) {
+            dias = 0;
+            meses = 0;
+            anyos = 0;
+            System.out.println("Error. Introduzca un valor entre 01 y 30");
+        }
+        if (meses > 12) {
+            dias = 0;
+            meses = 0;
+            anyos = 0;
+            System.out.println("Error. Introduzca un valor entre 01 y 12");
+        }
+        if (anyos > 99) {
+            dias = 0;
+            meses = 0;
+            anyos = 0;
+            System.out.println("Error. Introduzca un valor entre 01 y 99");
+        }
     }
 
     /**
