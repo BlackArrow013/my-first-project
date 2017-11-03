@@ -9,11 +9,11 @@
  */
 public class CalendarioBasico
 {
-    // El día establecido en el calendario en valor numérico o entero.
+    // El dia establecido en el calendario en valor numerico o entero.
     private int day;
-    // El mes establecido en el calendario en valor numérico o entero.
+    // El mes establecido en el calendario en valor numerico o entero.
     private int month;
-    // El año establecido en el calendario en valor numérico o entero.
+    // El a�o establecido en el calendario en valor numerico o entero.
     private int year;
 
     /**
@@ -21,9 +21,9 @@ public class CalendarioBasico
      */
     public CalendarioBasico()
     {
-        day = 1;
-        month = 1;
-        year = 1;
+        day = 01;
+        month = 01;
+        year = 01;
     }
 
     /**
@@ -31,13 +31,13 @@ public class CalendarioBasico
      */
     public void avanzarFecha()
     {
-        day += 1;
+        day += 01;
         if (day > 30) {
-            month += 1;
-            day = 1;
+            month += 01;
+            day = 01;
             if (month > 12) {
-                year += 1;
-                month = 1;
+                year += 01;
+                month = 01;
             }
         }
     }
@@ -45,11 +45,11 @@ public class CalendarioBasico
     /**
      * Permite establecer la fecha del calendario alterando la preestablecida.
      */
-    public void fijarFecha(int dias, int meses, int anyos)
+    public void fijarFecha(int dia, int mes, int ano)
     {
-        day = dias;
-        month = meses;
-        year = anyos;
+        day = dia;
+        month = mes;
+        year = ano;
     }
 
     /**
@@ -68,7 +68,7 @@ public class CalendarioBasico
             dosNumMonth = "0" + month;
         }
         if (year < 10) {
-            dosNumMonth = "0" + year;
+            dosNumYear = "0" + year;
         }
         return dosNumDay + "-" + dosNumMonth + "-" + dosNumYear;
     }
